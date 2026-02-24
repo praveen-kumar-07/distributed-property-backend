@@ -10,8 +10,9 @@ CREATE TABLE IF NOT EXISTS properties (
 );
 
 -- Create idempotency table
-CREATE TABLE IF NOT EXISTS idempotency_keys (
-    request_id VARCHAR(255) PRIMARY KEY,
+CREATE TABLE idempotency_keys (
+    request_id VARCHAR PRIMARY KEY,
+    response JSONB,
     created_at TIMESTAMP DEFAULT NOW()
 );
 
